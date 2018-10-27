@@ -1,0 +1,16 @@
+<mvc:View controllerName="sce.samplecoreElements.controller.homePage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="homepage">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<TileContainer id="container" tileDelete="handleTileDelete" tiles="{optionForUsers>/TileCollection}">
+						<StandardTile icon="{optionForUsers>icon}" type="{optionForUsers>type}" number="{optionForUsers>number}"
+						numberUnit="{optionForUsers>numberUnit}" title="{optionForUsers>title}" info="{optionForUsers>info}" infoState="{optionForUsers>infoState}"
+						press="onPressTile"/>
+					</TileContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

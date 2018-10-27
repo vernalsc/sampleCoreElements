@@ -1,0 +1,111 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "sce.samplecoreElements",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"optionForUsersDataSrc": {
+				"uri": "model/data.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sce.samplecoreElements.view.homePage",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sce.samplecoreElements.i18n.i18n"
+				}
+			},
+			"optionForUsers": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "optionForUsersDataSrc"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "sce.samplecoreElements.view",
+				"controlAggregation": "pages",
+				"controlId": "homepage",
+				"clearControlAggregation": false,
+				"viewLevel": 1
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "homepage",
+				"target": "home"
+			}, {
+				"pattern": "materialoverview",
+				"name": "materialoverview",
+				"target": "materialoverview"
+			}],
+			"targets": {
+				"home": {
+					"viewName": "homePage",
+					"viewType": "XML",
+					"viewLevel": 1
+				},
+				"materialoverview": {
+					"viewType": "XML",
+					"viewName": "materialOverview",
+					"viewLevel": 2
+				}
+			}
+		}
+	}
+}
